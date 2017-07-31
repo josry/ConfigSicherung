@@ -1,0 +1,29 @@
+{
+	"gen" : {
+		"Channel" : "gen",
+		"EventWeight" : "eventWeight",
+		"Quantities" : [
+		    "event",
+            "numberGeneratedEventsWeight",
+		    "generatorWeight",
+		    "eventWeight",
+			"genBosonPt",
+			"genBosonEta",
+			"genBosonPhi",
+			"genBosonMass",
+			"genBosonLV"
+		],
+		"Consumers" : [
+			"KappaLambdaNtupleConsumer",
+			"cutflow_histogram"
+		],
+	"BosonPdgIds" : [35],
+	"BosonStatuses" : [62],
+	"Processors" : [
+		"producer:GenParticleProducer",
+		"producer:GenBosonFromGenParticlesProducer",
+		"producer:GeneratorWeightProducer"
+	]
+	}
+}
+

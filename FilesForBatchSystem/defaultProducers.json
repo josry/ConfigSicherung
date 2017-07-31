@@ -1,0 +1,24 @@
+{
+	"#RunWhitelist" : [
+	],
+	"#LumiWhitelist" : [
+	],
+	"#EventWhitelist" : [
+	],
+	"#RunBlacklist" : [
+	],
+	"#LumiBlacklist" : [
+	],
+	"#EventBlacklist" : [
+	],
+	"Processors" : [
+		"#filter:RunLumiEventFilter",
+		"producer:GenParticleProducer",
+        "producer:GenTauDecayProducer",
+		"producer:GenPartonCounterProducer",
+		"producer:GeneratorWeightProducer",
+		"producer:NumberGeneratedEventsWeightProducer",
+		"producer:NicknameProducer"
+	],
+	"genParticles" : ["genTau"]
+}

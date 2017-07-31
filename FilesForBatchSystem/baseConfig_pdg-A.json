@@ -1,0 +1,23 @@
+{
+	"GenParticles" : "genParticles",
+	"EventMetadata" : "eventInfo",
+	"LumiMetadata" : "lumiInfo",
+	"SkipEvents" : 0,
+	"EventCount" : -1,
+	"InputIsData" : {
+		"nick" : {
+			"default" : "false"
+		}
+	},
+	"InputFiles" : [
+		"/nfs/dust/cms/user/fcolombo/skimming/2014-08-12-skim/SM_VBFHToTauTau_M_125_powheg_pythia_8TeV/kappa_SM_VBFHToTauTau_M_125_powheg_pythia_8TeV_0.root"
+	],
+	"genParticles" : ["genTau"],
+	"BosonPdgId" : [36],
+	"BosonStatuses" : [62],
+	"OutputPath" : "output.root",
+	"Processors" : [],
+    "NumberGeneratedEvents" : 1000000,
+    "CrossSection" : 1.0
+}
+
