@@ -51,7 +51,7 @@ echo "higgstype = $htype"
 echo "HFACT = $HFACT"
 
 
-dir=./2HDM_2017_run-lhc-${htype}-m${htype}${mass}_tb${tb}_${particle_isinterference}
+dir=./MSSM_2017_run-lhc-${htype}-m${htype}${mass}_tb${tb}_${particle_isinterference}
 
 if [ "${particle}" = "tb" ]; then
     echo "You choose tb"
@@ -93,10 +93,15 @@ fi
 
 
 cp powheg.input $dir
+cp powheg-fh.in $dir
 
+#
 sed -i -e "s/iseed    55555/iseed    ${seed}/" $dir/powheg.input
-sed -i -e "s/hmass  500/hmass  ${mass}/" $dir/powheg.input
-sed -i -e "s/tanb 50d0/tanb ${tb}d0/" $dir/powheg.input
+
+sed -i -e "s/MA0          500/MA0    ${mass}/" $dir/powheg-fh.in
+
+sed -i -e "s/TB           15/TB    ${tb}/" $dir/powheg-fh.in
+#
 
 if [ "$particle" = "tb" ]; then
     echo ""
@@ -113,17 +118,19 @@ if [ "$htype" = "H" ]; then
     sed -i -e "s/higgstype 3/higgstype 2/" $dir/powheg.input
 fi
 
-sed -i -e "s/hfact    17d0/hfact    ${HFACT}d0/" $dir/powheg.input
+sed -i -e "s/!hfact    %hfact/hfact    ${HFACT}d0/" $dir/powheg.input
 echo "Done !"
 
 
 cd $dir
 
 
-/portal/ekpbms1/home/josmet/CMSSW_7_4_14/src/POWHEG-BOX-V2/gg_H_2HDM/pwhg_main
+/portal/ekpbms1/home/josmet/CMSSW_7_4_14/src/POWHEG-BOX-V2/gg_H_MSSM/pwhg_main
+
+tail -n 100 pwgevents.lhe
 
 cd -
 cmsRun fromLHE2EDM.py input=$dir/pwgevents.lhe output=./lhe2edm-${4}-m${4}${1}_tb${2}_${3}.root
 
-tar -cf packed-${4}-m${4}${1}_tb${2}_${3}.tar.gz ${dir}
+tar -cf MSSM_packed-${4}-m${4}${1}_tb${2}_${3}.tar.gz ${dir}
 echo "done"

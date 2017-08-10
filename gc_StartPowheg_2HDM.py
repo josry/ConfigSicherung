@@ -21,32 +21,20 @@ cfg.condor.set("JDLData", "request_disk=3000000")
 cfg.jobs.set("max retry", "4")
 cfg.jobs.continuous = True
 cfg.jobs.nseeds = 200
-cfg.jobs.seeds = 7
+cfg.jobs.seeds = 7777
 
 cfg.usertask.executable = 'ShellSkripte/StartPowheg_2HDMgenerate_Mass_tanB_Particle_PureOrInteference_BosonType_pdg-A.sh'
 cfg.usertask.set("input files", ["ShellSkripte/StartPowheg_2HDMgenerate_Mass_tanB_Particle_PureOrInteference_BosonType_pdg-A.sh", "FilesForBatchSystem/2HDM/powheg.input", "FilesForBatchSystem/fromLHE2EDM.py"] )
 
 executable = 'ShellSkripte/StartPowheg_2HDMgenerate_Mass_tanB_Particle_PureOrInteference_BosonType_pdg-A.sh'
 
-#cfg.parameters.set("parameters", ["P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8"])
-#cfg.parameters.set("repeat", 1)
-#cfg.parameters.set("P1", ["400", "600", "700"])
-#cfg.parameters.set("P2", ["5", "10", "15", "30"])
-#cfg.parameters.set("P3", ["t", "b", "tb"])
-#cfg.parameters.set("P4", ["pure", "interference"])
-#cfg.parameters.set("P5", ["A"])
-##
-
 cfg.parameters.set("parameters", ["P1", "P2", "P3", "P4", "P5"])
 cfg.parameters.set("repeat", 1)
 cfg.parameters.set("P1", ["400", "500", "600", "700", "800"])
-cfg.parameters.set("P2", ["5", "10", "15", "30"])
+cfg.parameters.set("P2", ["20"])
 cfg.parameters.set("P3", ["t_pure", "b_pure", "tb_interference","t_interference", "b_interference"])
 cfg.parameters.set("P4", ["A"])
-
-
 ##
-
 cfg.parameters.set("P5", ["/portal/ekpbms1/home/josmet/CMSSW_7_4_14/"])
 cfg.parameters.set("P6", ["/portal/ekpbms1/home/josmet/CMSSW_8_0_25/"])
 cfg.parameters.set("P7", ["/portal/ekpbms1/home/josmet/CMSSW_7_4_7/"])

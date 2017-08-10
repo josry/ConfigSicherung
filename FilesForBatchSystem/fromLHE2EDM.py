@@ -19,7 +19,7 @@ process.load('Configuration.EventContent.EventContent_cff')
 process.load('SimGeneral.MixingModule.mixNoPU_cfi')
 #process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 
-maxEvents=-1 # amount of events change here
+maxEvents=1000000 # amount of events change here
 
 process.maxEvents = cms.untracked.PSet(
     input = cms.untracked.int32(maxEvents)

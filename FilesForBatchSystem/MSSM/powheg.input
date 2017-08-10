@@ -76,7 +76,7 @@ withnegweights 1 ! use negative weights
 testplots  1      ! (default 0, do not) do NLO and PWHG distributions
 !testsuda  1       ! (default 0, do not testa) test Sudakov form factor
 !radregion 1       ! (default all regions) only generate radiation in the selected singular region  
-!iseed    45321    ! initialize random number sequence 
+iseed    55555    ! initialize random number sequence 
 !rand1    32      ! initialize random number sequence 
 !rand2    0      ! initialize random number sequence 
 !iupperisr 1 ! (default 1) choice of ISR upper bounding functional form 
